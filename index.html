@@ -58,11 +58,11 @@
   <body>
     <div class="wrapper">
       <header>
+        <a target="_blank" href="http://www.mejorando.la"><img class="imago" src="images/mejorandola.png" /></a>
         <h1 class="header">ExpoGIT</h1>
         <p class="header">#mejorandocurso </p>
         <p> Una iniciativa de Generación Mejorandola</p>
         <ul>
-          <li class="download"><a class="buttons" target="_blank" href="http://mejorando.la/">Mejorandola</a></li>
           <li class="download"><a target="_blank" class="buttons" href="http://git-scm.com">Web Oficial GIT</a></li>
           <li class="download"><a class="buttons" href="#estudio">Guías y Videos</a></li>
           <br />
@@ -93,6 +93,7 @@
 <h3>Guías de Estudio</h3>
 </a>
 <ul>
+  <li><p><a target="_blank" href="http://git-scm.com/book/es">GIT "La guía sencilla".</a> .</p></li>
 <li><p><a target="_blank" href="http://git-scm.com/book/es">Pro GIT.</a> .</p></li>
 <li><p><a target="_blank" href="http://try.github.com/levels/1/challenges/1">Try GIT.</a> .</p></li>
 <li><p><a target="_blank" href="http://gitimmersion.com/index.html">Git Immersion.</a> .</p></li>
@@ -221,13 +222,75 @@
     <li>"q" - Salir</li>
   </ul>
 
+<h3>Instalar llave SSH</h3>
+<p>La llave SSH te va a permitir conectarte con tu cuenta de Github. Una vinculación de tu área local(tu ordenador en este caso) y el área remota(los servidores de Github).</p>
+<p>Por lo tanto para poder conectarte debes de teclear:</p>
+<pre>
+  <code>$ssh-keygen
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/home/you/.ssh/id_rsa):
+  </code>
+</pre>
+<p>Le das ENTER y después te pedirá que agregues una contraseña, el cual es recomendable:</p>
+<pre>
+  <code>
+  Enter passphrase (empty for no passphrase): [Contraseña]
+  Enter same passphrase again: [Repetir contraseña]
+  </code>
+</pre>
+<p>El cual te aparecerá un mensaje parecido a este:</p>
+<pre>
+  <code>
+  Your identification has been saved in /home/you/.ssh/id_rsa.
+  Your public key has been saved in /home/you/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db tucorreo@tucorreo.com
+  </code>
+</pre>
+<p>Después, para ver la llave SSH, vas a teclear:</p>
+<pre>
+  <code>$cd .ssh
+  $cat id_rsa.pub</code>
+</pre>
+<p>Finalmente, copiarás toda la llave desde "ssh-rsa" hasta el final y la copiarás en tu perfil de Github -> Account Settings -> SSH Keys y finalmente le darás "Add SSH Key" para pegarlo. Debe de estar completo y exacto.</p>
 
+<h3>Comprobar llave SSH</h3>
+<p>Para comprobar que nuestra llave está instalada y tenemos la vinculación de Github con nuestra área local, tecleamos en la consola:</p>
+<pre>
+  <code>ssh -T git@github.com
+  The authenticity of host 'github.com (207.97.227.239)' can't be established.
+  RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+  Are you sure you want to continue connecting (yes/no)?</code>
+</pre>
+<p>Esto significa que está todo perfecto. Le das "Yes" y después te saldrá este mensaje de éxito:</p>
+<pre>
+  <code>Hi username! You've successfully authenticated, but GitHub does not
+  provide shell access.</code>
+</pre>
 
+<h3>Descarguemos un Repositorio</h3>
+<p>Vamos a ir un repositorio para descargarlo; en este caso usaremos el de "expogit" y le daremos "Fork" el cual hace un repositorio exacto del proyecto que estás copiando dentro de tu perfil.</p>
+<p>A comparación de "Clone", Fork te permite interactuar con un repositorio personal del proyecto para posteriormente contribuir con tu código a través de un botón llamado "Pull Request" que veremos pronto. Si sólo deseas copiarlo, puedes utilizar "Clone".</p>
+<p>Después, crearemos una carpeta dentro de nuestro disco duro y le pondremos el nombre de "expogit".</p>
+<p>Iremos a la consola y teclearemos:</p>
+<pre>
+  <code>$cd ~/expogit 
+      #Donde hayas colocado la carpeta</code>
+  $git init
+      # Es un comando que significa iniciar GIT en este proyecto,
+       el cual empezará a rastrear todos los movimientos y cambios que hagas.
+  $git remote add origin git@github.com:MiguelNieva/expogit.git
+      # Creamos el enlace remoto del repositorio de Github con el
+      repositorio en local.
+  $git pull origin master
+      # Traemos toda la información que se encuentra en el repositorio
+</pre>
+<p>Con esto, ya tenemos en nuestra carpeta y en un nuestro perfil de Github, una copia completa del repositorio del proyecto.</p>
+<h3>Hacer cambios y proponerlos al proyecto principal</h3>
+<p>Una vez que hacen cambios dentro del proyecto principal.</p>
 
-
-
-
-
+<h3>Crear un Repositorio en Github</h3>
+<h3>Crear una página para Proyecto Web con Github Pages</h3>
 
       </section>
     </div>

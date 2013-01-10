@@ -313,7 +313,10 @@ section {
   float:right;
   padding-bottom:50px;
 }
-
+section img
+{
+  width: 100%;
+}
 
 /* Footer */
 
@@ -331,6 +334,7 @@ footer {
     width:auto;
     margin:0;
   }
+
 
   header, section, footer {
     float:none;
@@ -412,7 +416,14 @@ footer {
   }
 }
 
-section img
+header a:hover
 {
-  width: 100%;
+  opacity: .6;
 }
+
+.imago
+  {
+    border-radius:10px;
+    max-width: 60px;
+    margin: 0;
+  }
