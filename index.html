@@ -66,12 +66,11 @@
           <li class="download"><a target="_blank" class="buttons" href="http://git-scm.com">Web Oficial GIT</a></li>
           <li class="download"><a class="buttons" href="#estudio">Guías y Videos</a></li>
           <br />
-          <li class="download"><a class="buttons" target="_blank" href="https://github.com/MiguelNieva/expogit/zipball/master">Tendencias</a></li>
-          <li class="download"><a class="buttons" target="_blank" href="http://www.youtube.com/watch?v=udughzlN5M4">Instalación GIT</a></li>
+          <li class="download"><a class="buttons" href="#tendencias">Tendencias</a></li>
+          <li class="download"><a class="buttons" href="#instalacion">Instalación GIT</a></li>
           <br />
           <li><a target="_blank" class="buttons github" href="https://cursos.mejorando.la/cursos/diseno-desarrollo-web-online/discusion/20012">¡Quiero exponer!</a></li>
         </ul>
-
       </header>
       <section>
 
@@ -93,11 +92,11 @@
 <h3>Guías de Estudio</h3>
 </a>
 <ul>
-  <li><p><a target="_blank" href="http://git-scm.com/book/es">GIT "La guía sencilla".</a> .</p></li>
-<li><p><a target="_blank" href="http://git-scm.com/book/es">Pro GIT.</a> .</p></li>
-<li><p><a target="_blank" href="http://try.github.com/levels/1/challenges/1">Try GIT.</a> .</p></li>
-<li><p><a target="_blank" href="http://gitimmersion.com/index.html">Git Immersion.</a> .</p></li>
-<li><p><a target="_blank" href="http://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html">Git Essential Training. </a> Una increíble guía que te dice paso a paso cómo instalar GIT, así como ejercicios de práctica.</p>
+  <li><p><a target="_blank" href="http://rogerdudler.github.com/git-guide/index.es.html">GIT "La guía sencilla".</a></p></li>
+<li><p><a target="_blank" href="http://git-scm.com/book/es">Pro GIT.</a></p></li>
+<li><p><a target="_blank" href="http://try.github.com/levels/1/challenges/1">Try GIT.</a></p></li>
+<li><p><a target="_blank" href="http://gitimmersion.com/index.html">Git Immersion.</a></p></li>
+<li><p><a target="_blank" href="http://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html">Git Essential Training. </a></p>
 </li>
 </ul>
 
@@ -105,7 +104,7 @@
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/udughzlN5M4" frameborder="0" allowfullscreen></iframe>
 
-<a name="Tendencias"></a>
+<a name="tendencias"></a>
 
 <h3>GIT + Github - El futuro de la Colaboración Web</h3>
 
@@ -152,7 +151,7 @@
   A través de los Sistemas de Control de Versiones y las comunidades. Éstos fueron creados para gestionar código, historial de avances y sobre todo, compartir el proyecto.
 </p>
 
-
+<a name="instalacion"></a>
 <h3>Instalar GIT</h3>
 
 <p>
@@ -303,15 +302,63 @@
   # no changes added to commit (use "git add" and/or "git commit -a")
 </code>
 </pre>
-<p>Como podrán observar, hay un cambio de modificación en el archivo "index.html". Claro está que GIT te permite escoger que archivos quieres preparar para subirlos al repositorio. Antes de subirlos, se te pide que los pongas
+<p>Como podrán observar, hay un cambio de modificación en el archivo "index.html". La ventaja de GIT es que te permite escoger cuáles archivos quieres preparar para subirlos al repositorio. Puede que no quieras subir todos los archivos y es válido.
+</p>
+<p>
+Antes de subirlos al repositorio, se te pide que los pongas
 en un área llamada "stage", que significa estacionarlos para 
-posteriormente enviarlos a Github.</p>
-<p>En este caso, vamos a preparar el archivo, vamos a escribir en la consola:</p>
+posteriormente enviarlos a tu repositorio en LOCAL a través de
+un registro de cambios llamados "commits". Después, estos commits son
+los que enviaremos finalmente al repositorio en GITHUB.</p>
+<p>Primero, vamos a preparar el archivo, escríbiremos en la consola:</p>
 <pre>
   <code>$git add index.html
+  $git status
+  # On branch gh-pages
+  # Changes to be committed:
+  #   (use "git reset HEAD <file>..." to unstage)
+  #
+  # modified:   index.html
+  #
 </code>
 </pre>
-
+<p>A diferencia del otro mensaje, te dice que los cambios ya pueden subir al repositorio a través de un comando que se llama "commit". Vamos a ejecutarlo:</p>
+<pre>
+  <code>$git commit -m "Index modificado"
+</code>
+</pre>
+<p>El "-m" significa mensaje, que es el título de tu commit.
+  Y entre comillas escribimos el título.
+</p>
+<p>En este momento, acabamos de guardar un registro de cambios
+del repositorio en tu disco duro, en local. Ahora, hay que enviar
+esos cambios al repositorio de GitHub para que agregue, modifique o elimine archivos del repositorio de tu perfil y esté sincronizado con tu repositorio en local. Adicionalmente, todo mundo lo podrá ver
+y tendrás tu código a salvo (si explota tu computadora,
+perderías todo lógicamente, por lo que "en la nube" es mejor).</p>
+<p>Subimos a Github el repositorio de nuestro disco duro al repositorio
+de Github:</p>
+<pre>
+  <code>$git push origin master
+    # Si lo vamos a subir a otra rama (branch), cambiaremos la
+    # palabra master por el nombre de la rama.
+</code>
+</pre>
+<p>Y listo, verás cambios en tu repositorio en Github.</p>
+<h3>Colaborar con un proyecto</h3>
+<p>La bondad de Github no es sólo almacenar código, si no también
+colaborar. De acuerdo al tema anterior, hiciste un "fork" del
+repositorio principal en tu perfil.
+Todos los cambios que estuviste haciendo están almacenados en el
+repositorio de tu perfil, NO en el repositorio del autor principal, por
+lo que para enviar propuestas de cambio, existe un botón llamado
+"Pull Request", el cual propone cambios al repositorio del autor principal a partir de tu repositorio en GitHub.
+</p>
+<p>Obviamente, el autor no sabe qué código tienes en tu disco duro; lo único
+que podrá ver es el código que tienes en el repositorio "clon" del proyecto
+en tu perfil, por lo que al presionar "Pull Request" en la página
+del proyecto principal, te pedirá que selecciones qué rama y modificaciones
+quieres presentarle al autor para que él decida si incorporarlo al
+repositorio principal o simplemente rechazar tus cambios.</p>
 <h3>Crear un Repositorio en Github</h3>
 <h3>Crear una página para Proyecto Web con Github Pages</h3>
 
