@@ -411,3 +411,8 @@ footer {
     color:#444;
   }
 }
+
+section img
+{
+  width: 100%;
+}
