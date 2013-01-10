@@ -282,12 +282,35 @@
   $git remote add origin git@github.com:MiguelNieva/expogit.git
       # Creamos el enlace remoto del repositorio de Github con el
       repositorio en local.
-  $git pull origin master
-      # Traemos toda la información que se encuentra en el repositorio
+  $git pull
+      # Traemos toda la información que se encuentra en el repositorio,
+      incluyendo todas las ramas, si necesitas traer una rama específica
+      puedes agregar "origin master" ó por ejemplo "origin gh-pages"
+      si hay una página para ello.
 </pre>
 <p>Con esto, ya tenemos en nuestra carpeta y en un nuestro perfil de Github, una copia completa del repositorio del proyecto.</p>
 <h3>Hacer cambios y proponerlos al proyecto principal</h3>
-<p>Una vez que hacen cambios dentro del proyecto principal.</p>
+<p>Una vez que hacen cambios dentro de la carpeta de su repositorio en local(en su ordenador), podemos observar todo eso con el comando:</p>
+<pre>
+  <code>$git status
+  # On branch gh-pages
+  # Changes not staged for commit:
+  #   (use "git add <file>..." to update what will be committed)
+  #   (use "git checkout -- <file>..." to discard changes in working directory)
+  #
+  # modified:   index.html
+  #
+  # no changes added to commit (use "git add" and/or "git commit -a")
+</code>
+</pre>
+<p>Como podrán observar, hay un cambio de modificación en el archivo "index.html". Claro está que GIT te permite escoger que archivos quieres preparar para subirlos al repositorio. Antes de subirlos, se te pide que los pongas
+en un área llamada "stage", que significa estacionarlos para 
+posteriormente enviarlos a Github.</p>
+<p>En este caso, vamos a preparar el archivo, vamos a escribir en la consola:</p>
+<pre>
+  <code>$git add index.html
+</code>
+</pre>
 
 <h3>Crear un Repositorio en Github</h3>
 <h3>Crear una página para Proyecto Web con Github Pages</h3>
